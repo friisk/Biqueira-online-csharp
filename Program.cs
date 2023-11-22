@@ -7,12 +7,12 @@ public class BeckTorto
     static void Main(string[] args)
     {
         
-        Cardapio Gzinho = new Cardapio(0); //chamada do objeto
+        Cardapio Gzinho = new Cardapio(); //chamada do objeto
+        Carrinho Dmax = new Carrinho();
         
-
-        Console.WriteLine("`(*>_<*)′ Olá, seja muito bem vindo(a) a biquera online, aqui fazemos a magia acontecer ");
+        Console.WriteLine("`(*>_<*)′ Olá, seja muito bem vindo(a) a BIQUEIRA ONLINE");
         Console.WriteLine();
-        Console.WriteLine("Gostaria de dar uma olhada no nosso cardápio?? (resoponder com s/n)");
+        Console.WriteLine("Gostaria de dar uma olhada no nosso cardápio?? (responder com s/n)");
         char resp = char.Parse(Console.ReadLine());   
             
         if (resp == 's' || resp == 'S')
@@ -27,27 +27,28 @@ public class BeckTorto
                 switch (resposta) //opçoes de compra
                 {
                     case "Cocaina":
-                        Gzinho.Cocaina();
+                        Dmax.Cocaina();
                         break;
                     case "Prensado":
-                        Gzinho.Pren();
+                        Dmax.Pren();
                         break;
                     case "Haxixe":
-                        Gzinho.Hax();
+                        Dmax.Hax();
                         break;
                     case "Pedra":
-                         Gzinho.Pedra();
+                        Dmax.Pedra();
                         break;
                     default:
                         Console.WriteLine("nao sabia que noia era tao burro assim . . . ");
                         break;
                 }
 
-                Console.WriteLine("MUITO OBRIGADO(a) PELA PREFERENCIA, aqui esta o seu saldo de compras: \n");
-                Console.WriteLine(Gzinho);
+                Console.WriteLine("MUITO OBRIGADO(a) PELA PREFERENCIA, aqui esta o seu carrinho de compras: \n");
+                Console.WriteLine(Dmax);
                 Console.WriteLine();
                 Console.WriteLine("O senhor deseja mais alguma coisa?? (responder com SIM ou NAO ou digite sair) ");
                 string respo1 = Console.ReadLine();
+
             }
                 
         }
@@ -70,7 +71,5 @@ public class BeckTorto
         {
             Console.WriteLine("ERRO!! NAO ENTENDI FAZ DNV");
         }
-
-
     }
 }
