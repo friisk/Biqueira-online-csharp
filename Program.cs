@@ -9,7 +9,8 @@ public class BeckTorto
         
         Cardapio Gzinho = new Cardapio(); //chamada do objeto
         Carrinho Dmax = new Carrinho();
-        
+        string respo1;
+
         Console.WriteLine("`(*>_<*)′ Olá, seja muito bem vindo(a) a BIQUEIRA ONLINE");
         Console.WriteLine();
         Console.WriteLine("Gostaria de dar uma olhada no nosso cardápio?? (responder com s/n)");
@@ -20,10 +21,7 @@ public class BeckTorto
             Console.WriteLine(Gzinho);
             Console.WriteLine("Por favor escolha alguma de nossas opçoes acima > <");
             Console.WriteLine();
-            Console.WriteLine("Digite (sair) para sair");
             string resposta = Console.ReadLine();
-            while (resposta != "sair")
-            {
                 switch (resposta) //opçoes de compra
                 {
                     case "Cocaina":
@@ -43,14 +41,30 @@ public class BeckTorto
                         break;
                 }
 
-                Console.WriteLine("MUITO OBRIGADO(a) PELA PREFERENCIA, aqui esta o seu carrinho de compras: \n");
+                Console.WriteLine("TMJ NOIA, aqui esta o seu carrinho de compras: \n");
                 Console.WriteLine(Dmax);
                 Console.WriteLine();
-                Console.WriteLine("O senhor deseja mais alguma coisa?? (responder com SIM ou NAO ou digite sair) ");
-                string respo1 = Console.ReadLine();
-
+                Console.WriteLine("O senhor deseja mais alguma coisa?? (responder com SIM ou NAO) ");
+                respo1 = Console.ReadLine();
+             
+            if (respo1 == "SIM")
+            {
+                Console.WriteLine("claro Gzinho aqui esta o cardapio pra voce olhar novamente: ");
+                Console.WriteLine();
+                Console.WriteLine(Gzinho);
+                Console.Write("Faça seu pedido: ");
+                string rsp = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine("aqui esta o seu carrinho: ");
+                Console.WriteLine(Dmax);
+                Console.WriteLine("Vou perguntar novamente. . .O senhor deseja mais alguma coisa?? (responder com SIM ou NAO) ");
+                respo1 = Console.ReadLine();
+            }  
+            else
+            {
+                Console.WriteLine("obrigado pela preferencia, volte sempre :)");
             }
-                
+   
         }
         else if (resp == 'n' || resp == 'N')
         {

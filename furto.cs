@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace babou_no_beck_ta_expulso_da_sessão_nerdola
 {
-    internal class furto
+    internal class Furto
     { 
     }
 }
