@@ -47,7 +47,7 @@ public class BeckTorto
                 Console.WriteLine("O senhor deseja mais alguma coisa?? (responder com SIM ou NAO) ");
                 respo1 = Console.ReadLine();
              
-            if (respo1 == "SIM")
+            while (respo1 == "SIM")
             {
                 Console.WriteLine("claro Gzinho aqui esta o cardapio pra voce olhar novamente: ");
                 Console.WriteLine();
@@ -60,7 +60,7 @@ public class BeckTorto
                 Console.WriteLine("Vou perguntar novamente. . .O senhor deseja mais alguma coisa?? (responder com SIM ou NAO) ");
                 respo1 = Console.ReadLine();
             }  
-            else
+            if (respo1 == "NAO")
             {
                 Console.WriteLine("obrigado pela preferencia, volte sempre :)");
             }
