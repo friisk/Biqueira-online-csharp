@@ -12,7 +12,7 @@ public class BeckTorto
         Carrinho Dmax = new Carrinho();
         string respo1, resposta;
 
-        Console.WriteLine("`(*>_<*)′ Olá, seja muito bem vindo(a) a BIQUEIRA ONLINE");
+        Console.WriteLine("`(*>_<*)′ Olá, seja muito bem vindo(a) a TABERNA SKYRIM DE REALENGO");
         Console.WriteLine("Sente-se, gostaria de olhar um pouco de nosso arsenal de itens?? (responder com s/n)");
         char resp = char.Parse(Console.ReadLine());   
             
@@ -23,61 +23,43 @@ public class BeckTorto
             resposta = Console.ReadLine();
                 switch (resposta) //opçoes de compra
                 {
-                    case "Cocaina":
-                        Dmax.Cocaina();
+                    case "Espada":
+                        Dmax.EspadaDroconica();
                         break;
-                    case "Prensado":
-                        Dmax.Pren();
+                    case "Elixir":
+                        Dmax.ElixirDaVida();
                         break;
-                    case "Haxixe":
-                        Dmax.Hax();
+                    case "Arco":
+                        Dmax.ArcoRecurvo();
                         break;
-                    case "Pedra":
-                        Dmax.Pedra();
+                    case "Botas":
+                        Dmax.BotasMagicas();
                         break;
                     default:
                         Console.WriteLine("nao sabia que noia era tao burro assim . . . ");
                         break;
                 }
-                Console.WriteLine("TMJ NOIA, aqui esta o seu carrinho de compras: \n");
-                Console.WriteLine(Dmax);
-                Console.WriteLine();
-                Console.WriteLine("O senhor deseja mais alguma coisa?? (responder com SIM ou NAO) ");
-                respo1 = Console.ReadLine();
-             
-            while (respo1 == "SIM")
-            {
-                Console.WriteLine("claro Gzinho aqui esta o cardapio pra voce olhar novamente: ");
-                Console.WriteLine();
-                Console.WriteLine(Gzinho);
-                Console.Write("Faça seu pedido: ");
-                string rsp = Console.ReadLine();
-                Console.WriteLine();
-                Console.WriteLine("aqui esta o seu carrinho: ");
-                Console.WriteLine(Dmax);
-                Console.WriteLine("Vou perguntar novamente. . .O senhor deseja mais alguma coisa?? (responder com SIM ou NAO) ");
-                respo1 = Console.ReadLine();
-            }  
-            if (respo1 == "NAO")
-            {
-                Console.WriteLine("obrigado pela preferencia, volte sempre :)");
-            }
-   
+            Console.WriteLine("Escolha a quantidade: ");
+            N = int.Parse(Console.ReadLine());
+
+            Dmax.Add(resposta, N);
+            Console.WriteLine("TMJ NOIA, aqui esta o seu carrinho de compras: \n");
+            Console.WriteLine(Dmax);
         }
-        else if (resp == 'n' || resp == 'N')
+        else if (resp == 'n' || resp == 'N')//feedback.
         {
-            Console.WriteLine("Sem problemas!!");
-            Console.WriteLine();
-            Console.WriteLine("tambem temos uma loja de celular e aparelhos furtados, quer dar uma olhada? ");
-            char resposta = char.Parse(Console.ReadLine());
-            if (resposta == 's' || resposta == 'S')
+            Console.WriteLine("Sem problemas!! deixe seu feedback do que deveriamos adcionar a nossa loja: \n");
+            Console.WriteLine("Quantos produto vc vai sujerir? \n");
+            N = int.Parse(Console.ReadLine());
+            
+            string[] Produto = new string[N];
+            Console.WriteLine("Escreva o nome deles abaixo: ");
+            
+            for (int i = 0; i < N; i++)
             {
-                Console.WriteLine(". . . infelizemnte um de nossos principais furtadores foi pego pela policia, estaremos retornando em breve T_T");
+                Produto[i] = Console.ReadLine();
             }
-            else
-            {
-                Console.WriteLine(". . . tudo bem amigo, volte sempre. . . ");
-            }
+            Console.WriteLine("\nOtimas escolhas, obrigado pela ajuda!!");
         }
         else
         {

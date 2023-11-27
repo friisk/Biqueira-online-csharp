@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,24 +9,45 @@ namespace babou_no_beck_ta_expulso_da_sessão_nerdola
 {
     internal class Cardapio
     {
-        public double Pó = 10.99;
-        public double Prensado = 10.10;
-        public double Haxixe = 30.00;
-        public double Crack = 15.20;
+        private Dictionary <string, double> PreçoDosItens = new Dictionary <string, double>();
+        public Cardapio()
+        {
+            PreçoDosItens.Add("Espada Draconica ", 1000.0);
+            PreçoDosItens.Add("Elixir", 50.34);
+            PreçoDosItens.Add("Arco", 200.34);
+            PreçoDosItens.Add("Botas", 238.43);
+        }
+        public double GetItemPrice(string NomeDoItem)
+        {
+            if (PreçoDosItens.ContainsKey(NomeDoItem))
+            {
+                return PreçoDosItens[NomeDoItem];
+            }
+            else
+            {
+                Console.WriteLine("O item '{NomeDoItem}' nao foi encontrado no estoque");
+                return 0.0;
+            }
+
+        }
+        public double Espada = 1000.0;
+        public double Elixir = 50.34;
+        public double Arco = 200.34;
+        public double Botas = 238.43;
 
         public override string ToString()
         {
-            return "~Cocaina obstrui vasos nazais ^_^  \n"
-                + "R$" + Pó.ToString("F2")
+            return "~Espada Draconica do guardiao mestre^_^  \n"
+                + "R$" + Espada.ToString("F2")
                 + "\n*************************************************************"
-                + "\n~Prensadinho de 10 A++ ^0^ \n"
-                + "R$" + Prensado.ToString("F2") + " p/ grama."
+                + "\n~Elixir da vida do alquimista cheio de marra^0^ \n"
+                + "R$" + Elixir.ToString("F2") 
                 + "\n************************************************************"
-                + "\n~Haxixe Colombiano estoura neuronio amnesia raze a+ X_X  \n"
-                + "R$" + Haxixe.ToString("F2") + " p/ grama."
+                + "\n~Arco Recurvo do guerreiro perdido X_X  \n"
+                + "R$" + Arco.ToString("F2")
                 + "\n************************************************************"
-                + "\n~pedra decepciona familia noia  > <  \n"
-                + "R$" + Crack.ToString("F2")
+                + "\n~Botas magicas do feiticeiro encurralado> <  \n"
+                + "R$" + Botas.ToString("F2")
                 + "\n*************************************************************"
                 ;
         }
