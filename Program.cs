@@ -1,27 +1,26 @@
 ﻿using babou_no_beck_ta_expulso_da_sessão_nerdola;
 using System;
 using System.Globalization;
+using System.Runtime.ExceptionServices;
 
 public class BeckTorto
 {
     static void Main(string[] args)
     {
-        
+        int N;
         Cardapio Gzinho = new Cardapio(); //chamada do objeto
         Carrinho Dmax = new Carrinho();
-        string respo1;
+        string respo1, resposta;
 
         Console.WriteLine("`(*>_<*)′ Olá, seja muito bem vindo(a) a BIQUEIRA ONLINE");
-        Console.WriteLine();
-        Console.WriteLine("Gostaria de dar uma olhada no nosso cardápio?? (responder com s/n)");
+        Console.WriteLine("Sente-se, gostaria de olhar um pouco de nosso arsenal de itens?? (responder com s/n)");
         char resp = char.Parse(Console.ReadLine());   
             
         if (resp == 's' || resp == 'S')
         {
             Console.WriteLine(Gzinho);
-            Console.WriteLine("Por favor escolha alguma de nossas opçoes acima > <");
-            Console.WriteLine();
-            string resposta = Console.ReadLine();
+            Console.WriteLine("Estas são nossas opçoes no momento");
+            resposta = Console.ReadLine();
                 switch (resposta) //opçoes de compra
                 {
                     case "Cocaina":
@@ -40,7 +39,6 @@ public class BeckTorto
                         Console.WriteLine("nao sabia que noia era tao burro assim . . . ");
                         break;
                 }
-
                 Console.WriteLine("TMJ NOIA, aqui esta o seu carrinho de compras: \n");
                 Console.WriteLine(Dmax);
                 Console.WriteLine();
