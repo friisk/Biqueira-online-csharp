@@ -12,7 +12,7 @@ namespace babou_no_beck_ta_expulso_da_sessão_nerdola
         private Dictionary <string, double> PreçoDosItens = new Dictionary <string, double>();
         public Cardapio()
         {
-            PreçoDosItens.Add("Espada Draconica ", 1000.0);
+            PreçoDosItens.Add("Espada", 1000.0);
             PreçoDosItens.Add("Elixir", 50.34);
             PreçoDosItens.Add("Arco", 200.34);
             PreçoDosItens.Add("Botas", 238.43);
@@ -25,7 +25,7 @@ namespace babou_no_beck_ta_expulso_da_sessão_nerdola
             }
             else
             {
-                Console.WriteLine("O item '{NomeDoItem}' nao foi encontrado no estoque");
+                Console.WriteLine("O item " + NomeDoItem + " nao foi encontrado no estoque");
                 return 0.0;
             }
 
